@@ -1,10 +1,9 @@
-import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service';
-import { Test, Prisma } from '@prisma/client';
+import { Injectable, LoggerService } from '@nestjs/common';
+import { PrismaService } from 'src/prisma.service';
 
 @Injectable()
 export class TestService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService, private logger: LoggerService) {}
 
   async test() {
     for (let i = 1; i <= 10000; i++) {
@@ -13,6 +12,7 @@ export class TestService {
           name: `name${i}`,
         },
       });
+      this.logger.log;
     }
   }
 }

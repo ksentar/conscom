@@ -1,7 +1,7 @@
 import { Command } from 'nestjs-command';
 import { Injectable } from '@nestjs/common';
 import { TestService } from './test.service';
-import { PrismaService } from '../prisma/prisma.service';
+import { PrismaService } from '../prisma.service';
 
 @Injectable()
 export class TestCommand {
