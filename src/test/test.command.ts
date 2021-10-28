@@ -1,14 +1,10 @@
 import { Command } from 'nestjs-command';
 import { Injectable } from '@nestjs/common';
 import { TestService } from './test.service';
-import { PrismaService } from '../prisma.service';
 
 @Injectable()
 export class TestCommand {
-  constructor(
-    private readonly testService: TestService,
-    private readonly prismaService: PrismaService,
-  ) {}
+  constructor(private readonly testService: TestService) {}
 
   @Command({
     command: 'test:create-many',
